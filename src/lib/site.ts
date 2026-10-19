@@ -13,7 +13,9 @@ function cleanRepoUrl(raw: string | undefined): string | null {
   }
 }
 
-export const REPO_URL: string | null = cleanRepoUrl(import.meta.env.VITE_REPO_URL);
+export const REPO_URL: string | null = cleanRepoUrl(
+  import.meta.env.VITE_REPO_URL ?? 'https://github.com/VivekSolanki1502/APIVERSE',
+);
 
 /** Pre-filled "outdated information" issue link, or null when no repository is configured. */
 export function reportIssueUrl(apiId: string, apiName: string, repo: string | null = REPO_URL): string | null {

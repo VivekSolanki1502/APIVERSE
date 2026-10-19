@@ -8,7 +8,7 @@ APIverse is an open-source web app for choosing APIs before integrating them. Th
 
 Its differentiator is not catalog size. It is **trustworthy data and honest uncertainty**: every pricing record carries a source URL, a verification status and a last-verified date, and unknown values stay unknown (never zero).
 
-> **Live demo:** Coming soon. For now, run APIverse locally using the steps below.
+> **Live demo:** [apiverse.apiverse.workers.dev](https://apiverse.apiverse.workers.dev)
 >
 ![APIverse preview](public/og-image.png)
 

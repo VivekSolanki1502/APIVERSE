@@ -73,6 +73,6 @@ Example GitHub Actions deploy job (optional, add to your own workflow):
 
 ## Before you go live
 
-- Set `VITE_REPO_URL` (see `.env.example`) to your public GitHub URL, for example `https://github.com/owner/apiverse`. While it is unset, APIverse hides all GitHub links and the pre-filled issue link rather than pointing at a placeholder.
-- Social previews: `public/og-image.png` (1200×630) is included, but most networks need an absolute URL. Set `og:image` in `index.html` to `https://<your-origin>/og-image.png` and add a `<link rel="canonical">` once the origin is known. The app is client-rendered, so per-page titles and descriptions are set at runtime and are not seen by crawlers that do not run JavaScript.
+- Set `VITE_REPO_URL` (see `.env.example`) to your public GitHub URL when deploying a fork. The default points to the APIverse source repository.
+- Social previews use the included `public/og-image.png` (1200×630) and the current canonical live URL. Update the canonical, `og:url`, `og:image`, and `twitter:image` tags in `index.html` when using a different domain. The app is client-rendered, so per-page titles and descriptions are set at runtime and are not seen by crawlers that do not run JavaScript.
 - Enable private vulnerability reporting and add a security contact to `SECURITY.md`.
