@@ -4,7 +4,7 @@
 
 **Discover. Compare. Test. Budget. Build.**
 
-APIverse is an open-source web app for choosing APIs before integrating them. The React frontend supports discovery, pricing comparisons, cost estimates and browser-side request testing. An optional Fastify backend adds public collection links, API suggestions and correction reports, with SQLite persistence.
+APIverse is an open-source web app for choosing APIs before integrating them. The React frontend supports discovery, pricing comparisons, cost estimates and browser-side request testing. The repo includes a free Cloudflare deployment setup for the app, with public collection links, API suggestions and correction reports backed by persistent D1 storage. A Fastify/SQLite backend is also included for local development and self-hosting.
 
 Its differentiator is not catalog size. It is **trustworthy data and honest uncertainty**: every pricing record carries a source URL, a verification status and a last-verified date, and unknown values stay unknown (never zero).
 

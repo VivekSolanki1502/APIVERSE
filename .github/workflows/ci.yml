@@ -27,11 +27,15 @@ jobs:
         run: npm run typecheck
       - name: Backend type check
         run: npm run backend:typecheck
+      - name: Cloudflare Worker type check
+        run: npm run worker:typecheck
       - name: Unit tests
         run: npm test
       - name: Backend integration tests
         run: npm run test:backend
       - name: Production build
         run: npm run build
+      - name: Cloudflare Worker bundle
+        run: npm run worker:dry-run
       - name: Backend production bundle
         run: npm run backend:build

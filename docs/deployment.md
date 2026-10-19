@@ -2,6 +2,23 @@
 
 APIverse has a static frontend and an optional API backend. The frontend can still be deployed without the backend, but online collection sharing, API suggestions and correction reports require it. Check each host's current limits and terms before deploying.
 
+## Free Cloudflare deployment (frontend and API)
+
+The repository includes a Cloudflare Worker that serves the built frontend and handles public collection shares, API suggestions, correction reports, `/health`, and `/ready`. D1 stores submitted data so it survives deployments and laptop shutdowns. Mutation routes have per-IP limits; hashed IP keys are cleaned up daily. The existing Fastify/SQLite backend remains available for local development and self-hosted Node deployments.
+
+Cloudflare's free Worker and D1 plans have request, CPU, storage, and query limits. Free hosting is suitable for a portfolio or small community project; it is not an uptime or capacity guarantee. Review Cloudflare's current [Workers limits](https://developers.cloudflare.com/workers/platform/limits/) and [D1 limits](https://developers.cloudflare.com/d1/platform/limits/).
+
+1. Create a Cloudflare account and install dependencies with `npm ci`.
+2. Create a D1 database named `apiverse`: `npx wrangler d1 create apiverse`.
+3. Copy the returned database ID into `wrangler.toml` in place of `REPLACE_WITH_YOUR_D1_DATABASE_ID`.
+4. Sign Wrangler in with `npx wrangler login`.
+5. Apply the schema and publish the site: `npm run d1:remote`, then `npm run deploy:cloudflare`.
+6. Open the `workers.dev` URL printed by Wrangler. The frontend and API use the same origin, so no API URL or CORS configuration is needed.
+
+To preview locally with the production Worker and a local D1 database, run `npm run build`, `npm run d1:local`, then `npx wrangler dev`.
+
+The repository's local Node backend is not used by this Cloudflare deployment. The Worker implements the backend routes currently consumed by the public frontend and persists them in D1. Wrangler asks you to confirm use or creation of Cloudflare resources during setup.
+
 ## Build settings
 
 | Setting | Value |

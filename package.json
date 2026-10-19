@@ -19,14 +19,19 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:catalog": "tsx scripts/validate-catalog.ts",
-    "check": "npm run lint && npm run typecheck && npm run backend:typecheck && npm run validate:catalog && npm run test && npm run test:backend && npm run build && npm run backend:build",
+    "check": "npm run lint && npm run typecheck && npm run backend:typecheck && npm run worker:typecheck && npm run validate:catalog && npm run test && npm run test:backend && npm run build && npm run backend:build && npm run worker:dry-run",
     "check:links": "tsx scripts/check-links.ts",
     "pricing:watch": "tsx scripts/pricing-watch.ts",
     "backend:dev": "tsx watch backend/src/server.ts",
     "backend:start": "node dist-backend/server.js",
     "backend:build": "esbuild backend/src/server.ts --bundle --platform=node --format=esm --target=node22 --packages=external --outfile=dist-backend/server.js",
     "backend:typecheck": "tsc -p backend/tsconfig.json",
-    "test:backend": "tsx --test backend/tests/*.node.ts"
+    "test:backend": "tsx --test backend/tests/*.node.ts",
+    "worker:typecheck": "tsc -p cloudflare/tsconfig.json",
+    "worker:dry-run": "wrangler deploy --dry-run",
+    "deploy:cloudflare": "npm run build && wrangler deploy",
+    "d1:local": "wrangler d1 migrations apply apiverse --local",
+    "d1:remote": "wrangler d1 migrations apply apiverse --remote"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.1",
@@ -53,6 +58,7 @@
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
+    "esbuild": "^0.28.2",
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.12.0",
@@ -63,8 +69,8 @@
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.15.0",
-    "esbuild": "^0.28.2",
     "vite": "^5.4.11",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.5",
+    "wrangler": "^4.151.2"
   }
 }
