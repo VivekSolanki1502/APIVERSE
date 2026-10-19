@@ -28,8 +28,9 @@
     "backend:typecheck": "tsc -p backend/tsconfig.json",
     "test:backend": "tsx --test backend/tests/*.node.ts",
     "worker:typecheck": "tsc -p cloudflare/tsconfig.json",
-    "worker:dry-run": "wrangler deploy --dry-run",
-    "deploy:cloudflare": "npm run build && wrangler deploy",
+    "worker:prepare": "node scripts/prepare-cloudflare.mjs",
+    "worker:dry-run": "npm run worker:prepare && wrangler deploy --dry-run",
+    "deploy:cloudflare": "npm run build && npm run worker:prepare && wrangler deploy",
     "d1:local": "wrangler d1 migrations apply apiverse --local",
     "d1:remote": "wrangler d1 migrations apply apiverse --remote"
   },

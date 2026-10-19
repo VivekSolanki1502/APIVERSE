@@ -10,7 +10,7 @@ not_found_handling = "single-page-application"
 [[d1_databases]]
 binding = "DB"
 database_name = "apiverse"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "0b72a604-aed3-4526-8661-d27a773f927b"
 migrations_dir = "cloudflare/migrations"
 
 [triggers]
