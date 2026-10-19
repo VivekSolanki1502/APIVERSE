@@ -1,0 +1,6 @@
+{
+  "delayMs": 3000,
+  "timeoutMs": 20000,
+  "userAgent": "APIverse-pricing-watch (+https://github.com/your-org/apiverse)",
+  "exclude": []
+}

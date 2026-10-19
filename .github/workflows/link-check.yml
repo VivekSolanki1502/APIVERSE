@@ -1,0 +1,22 @@
+name: Catalog link check (manual)
+
+# Runs on demand only. It makes real requests to provider sites, slowly, and a failure is a prompt
+# for human review, never a reason to auto-edit prices.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - run: npm ci
+      - run: npm run check:links

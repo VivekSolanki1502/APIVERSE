@@ -1,0 +1,15 @@
+name: CORS test report
+description: Report whether an API can be called from a web page (usually pre-filled by the playground)
+labels: [cors-report]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing. Only "readable" results and "blocked, but works outside a browser" results are accepted as evidence. Never paste API keys or private data.
+  - type: textarea
+    id: report
+    attributes:
+      label: Report details
+      description: The playground pre-fills this. If you are writing it by hand include the API id, browser and version, date, whether a web page could read the response, and whether the same request works with curl.
+    validations:
+      required: true

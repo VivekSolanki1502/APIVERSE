@@ -1,0 +1,32 @@
+name: Suggest an API
+description: Propose a public API for the catalog
+labels: [new-api, help wanted]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: API name
+    validations:
+      required: true
+  - type: input
+    id: docs
+    attributes:
+      label: Official documentation URL
+    validations:
+      required: true
+  - type: input
+    id: pricing
+    attributes:
+      label: Official pricing URL (if any)
+  - type: textarea
+    id: why
+    attributes:
+      label: What does it do and who is it useful for?
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Contribution
+      options:
+        - label: I can open a pull request adding this entry

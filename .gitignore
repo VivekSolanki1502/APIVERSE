@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-backend
+backend/data/*.sqlite
+coverage
+.env
+.env.*
+*.local
+.DS_Store
+
+!.env.example
+verification-harness/

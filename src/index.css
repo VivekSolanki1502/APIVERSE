@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------------------------------
+ * Design tokens. Colours are space-separated RGB triplets so Tailwind can apply alpha.
+ * Surface layers, from back to front: bg → surface → elevated. `code` is for code and JSON.
+ * Dark is the default theme; light is complete and selected with data-theme="light".
+ * ---------------------------------------------------------------------------------------- */
+:root,
+[data-theme='dark'] {
+  --bg: 9 10 15;
+  --surface: 16 18 26;
+  --elevated: 25 28 39;
+  --code: 12 14 21;
+  --border: 36 40 54;
+  --border-strong: 58 63 84;
+  --fg: 232 234 240;
+  --muted: 150 157 177;
+  --accent: 129 140 248;
+  --accent-fg: 10 11 22;
+  --ok: 52 211 153;
+  --warn: 251 191 36;
+  --danger: 248 113 113;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: 248 249 252;
+  --surface: 255 255 255;
+  --elevated: 241 243 249;
+  --code: 245 246 250;
+  --border: 223 226 236;
+  --border-strong: 190 195 212;
+  --fg: 15 18 28;
+  --muted: 82 90 110;
+  --accent: 79 70 229;
+  --accent-fg: 255 255 255;
+  --ok: 4 120 87;
+  --warn: 146 90 6;
+  --danger: 185 28 28;
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+    /* Long unbroken strings (URLs, ids) must never force sideways scrolling. */
+    overflow-wrap: anywhere;
+  }
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent;
+  }
+  ::selection {
+    background: rgb(var(--accent) / 0.35);
+  }
+  /* The main landmark receives programmatic focus from the skip link; no ring needed. */
+  main:focus {
+    outline: none;
+  }
+  html.dialog-open {
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* ---- Buttons ---------------------------------------------------------------------- */
+  .btn {
+    @apply inline-flex min-h-10 select-none items-center justify-center gap-2 rounded-control border border-border bg-surface px-3.5 py-2 text-sm font-medium text-fg;
+    @apply transition-[background-color,border-color,color,transform] duration-150 hover:border-border-strong hover:bg-elevated active:translate-y-px;
+    @apply disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-surface disabled:active:translate-y-0;
+  }
+  .btn-primary {
+    @apply border-transparent bg-accent text-accent-fg hover:border-transparent hover:bg-accent/90 disabled:hover:bg-accent;
+  }
+  .btn-ghost {
+    @apply border-transparent bg-transparent hover:border-transparent hover:bg-elevated;
+  }
+  .btn-sm {
+    @apply min-h-8 px-2.5 py-1 text-xs;
+  }
+  .btn-icon {
+    @apply min-h-10 min-w-10 px-0;
+  }
+  .btn-icon.btn-sm {
+    @apply min-h-8 min-w-8;
+  }
+
+  /* ---- Surfaces ----------------------------------------------------------------------- */
+  .card {
+    @apply rounded-panel border border-border bg-surface;
+  }
+  .card-interactive {
+    @apply transition-colors duration-150 hover:border-accent/50;
+  }
+
+  /* ---- Form controls ------------------------------------------------------------------ */
+  .input {
+    @apply min-h-10 w-full rounded-control border border-border bg-bg px-3 py-2 text-sm text-fg placeholder:text-muted;
+    @apply transition-colors duration-150 hover:border-border-strong focus:border-accent;
+    @apply disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .input[aria-invalid='true'] {
+    @apply border-danger;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium text-muted;
+  }
+  .check {
+    @apply h-4 w-4 shrink-0 rounded border-border-strong accent-[rgb(var(--accent))];
+  }
+
+  /* ---- Badges and chips --------------------------------------------------------------- */
+  .badge {
+    @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-border px-2 py-0.5 text-xs font-medium text-muted;
+  }
+  .chip {
+    @apply inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-full border border-border bg-surface px-3 text-xs font-medium text-muted;
+    @apply transition-colors duration-150 hover:border-border-strong hover:text-fg;
+  }
+  .chip-active,
+  .chip[aria-pressed='true'],
+  .chip[aria-current='true'] {
+    @apply border-accent/60 bg-accent/10 text-accent hover:border-accent/60 hover:text-accent;
+  }
+  .kbd {
+    @apply inline-flex min-w-5 items-center justify-center rounded border border-border bg-elevated px-1 font-mono text-[0.65rem] text-muted;
+  }
+
+  /* ---- Layout ------------------------------------------------------------------------- */
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+  .section-y {
+    @apply py-10 sm:py-14;
+  }
+
+  /* A very faint dot grid that fades out; used once, behind the hero. */
+  .bg-dots {
+    background-image: radial-gradient(rgb(var(--border-strong) / 0.55) 1px, transparent 1px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 0%, #000 20%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 80% at 50% 0%, #000 20%, transparent 75%);
+  }
+
+  /* ---- Overlays ----------------------------------------------------------------------- */
+  dialog.overlay {
+    @apply m-auto max-h-[calc(100dvh-2rem)] w-[min(100%-2rem,32rem)] overflow-hidden rounded-overlay border border-border bg-surface p-0 text-fg shadow-float;
+  }
+  dialog.overlay[open] {
+    @apply animate-pop-in;
+  }
+  dialog.overlay::backdrop {
+    background: rgb(0 0 0 / 0.6);
+  }
+  dialog.overlay-sheet {
+    @apply mb-0 mt-auto w-full max-w-none rounded-b-none rounded-t-overlay;
+  }
+  dialog.overlay-sheet[open] {
+    @apply animate-sheet-up;
+  }
+  dialog.overlay-palette {
+    @apply mt-[8vh] w-[min(100%-2rem,40rem)];
+  }
+  dialog.overlay-palette,
+  dialog.overlay-wide {
+    @apply mb-auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

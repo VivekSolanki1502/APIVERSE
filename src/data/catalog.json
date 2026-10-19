@@ -1,0 +1,2061 @@
+{
+  "schemaVersion": 1,
+  "apis": [
+    {
+      "id": "open-library",
+      "name": "Open Library",
+      "description": "Search books and read book, author and edition metadata from the Internet Archive's Open Library.",
+      "category": "Books & Education",
+      "tags": [
+        "books",
+        "search",
+        "metadata",
+        "education"
+      ],
+      "baseUrl": "https://openlibrary.org",
+      "documentationUrl": "https://openlibrary.org/developers/api",
+      "officialWebsiteUrl": "https://openlibrary.org",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": "Unidentified requests: 1 per second. Identified requests (User-Agent with application name and contact email): 3 per second.",
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Developer docs checked 2026-10-12: rate limits and usage guidelines confirmed. The page does not state pricing explicitly, so the pricing record stays \"needs review\".",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/search.json",
+        "query": {
+          "q": "the lord of the rings",
+          "limit": "1"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Not intended as a bulk data backend or high-traffic commercial infrastructure; the provider points bulk users to data dumps.",
+        "The provider asks applications to identify themselves with a User-Agent that includes contact details, and to cache responses."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "open-meteo",
+      "name": "Open-Meteo",
+      "description": "Free weather forecast and historical weather API with no key required for non-commercial use.",
+      "category": "Weather",
+      "tags": [
+        "weather",
+        "forecast",
+        "geolocation",
+        "time series"
+      ],
+      "baseUrl": "https://api.open-meteo.com",
+      "documentationUrl": "https://open-meteo.com/en/docs",
+      "officialWebsiteUrl": "https://open-meteo.com",
+      "authentication": {
+        "required": false,
+        "type": "apiKey",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": true,
+          "quota": 10000,
+          "unit": "calls",
+          "period": "day"
+        },
+        "trial": null,
+        "plans": [
+          {
+            "name": "API Standard",
+            "monthlyBase": null,
+            "billing": {
+              "kind": "requests",
+              "includedRequests": 1000000,
+              "pricePerRequest": null,
+              "billedInBlocksOf": null
+            },
+            "notes": "Price not shown on the checked pricing page."
+          },
+          {
+            "name": "API Professional",
+            "monthlyBase": null,
+            "billing": {
+              "kind": "requests",
+              "includedRequests": 5000000,
+              "pricePerRequest": null,
+              "billedInBlocksOf": null
+            },
+            "notes": "Price not shown on the checked pricing page."
+          }
+        ],
+        "rateLimits": "Free tier: 600 calls/minute, 5,000/hour, 10,000/day, 300,000/month.",
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://open-meteo.com/en/pricing",
+        "termsUrl": "https://open-meteo.com/en/terms",
+        "lastVerified": "2026-10-12",
+        "verificationStatus": "verified",
+        "verificationNotes": "Pricing page checked 2026-10-12: free-tier limits, non-commercial restriction and paid plan call budgets confirmed. Paid plan prices and currency were not listed on that page and are recorded as unknown.",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/v1/forecast",
+        "query": {
+          "latitude": "52.52",
+          "longitude": "13.41",
+          "current": "temperature_2m"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "The free tier is not permitted for commercial use.",
+        "API keys apply to paid plans via a separate customer endpoint; the free endpoint needs no key.",
+        "Paid plan prices are not published on the checked page, so costs for those plans cannot be estimated."
+      ],
+      "statusPageUrl": null,
+      "usageTerms": {
+        "commercialUse": "restricted",
+        "attributionRequired": null,
+        "notes": "The free API service is limited to non-commercial use; confirm the applicable terms for paid plans before commercial use.",
+        "sourceUrl": "https://open-meteo.com/en/terms",
+        "checkedOn": "2026-10-12"
+      },
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "pokeapi",
+      "name": "PokéAPI",
+      "description": "RESTful API for Pokémon data: species, moves, abilities, types and more.",
+      "category": "Gaming & Entertainment",
+      "tags": [
+        "pokemon",
+        "games",
+        "rest",
+        "no-auth"
+      ],
+      "baseUrl": "https://pokeapi.co/api/v2",
+      "documentationUrl": "https://pokeapi.co/docs/v2",
+      "officialWebsiteUrl": "https://pokeapi.co",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": "https://pokeapi.co/docs/v2",
+        "lastVerified": "2026-10-12",
+        "verificationStatus": "verified",
+        "verificationNotes": "Docs checked 2026-10-12: no authentication, \"free and open to use\". Rate limiting was removed in 2018 but users are asked to cache resources and limit request frequency; abusers may have IPs banned.",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/pokemon/ditto",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Fair-use policy applies: cache responses locally; violators can be banned.",
+        "Hosting is donation-supported, so avoid unnecessary traffic."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "nasa-open-apis",
+      "name": "NASA Open APIs",
+      "description": "Collection of NASA data APIs including Astronomy Picture of the Day, near-Earth objects and Mars rover photos.",
+      "category": "Science",
+      "tags": [
+        "space",
+        "astronomy",
+        "images",
+        "science"
+      ],
+      "baseUrl": "https://api.nasa.gov",
+      "documentationUrl": "https://api.nasa.gov",
+      "officialWebsiteUrl": "https://www.nasa.gov",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "api_key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/planetary/apod",
+        "query": {
+          "api_key": "YOUR_API_KEY"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Requires a key from api.nasa.gov; rate limits not yet verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "github-rest",
+      "name": "GitHub REST API",
+      "description": "Read and manage repositories, issues, pull requests, users and more on GitHub.",
+      "category": "Developer Utilities",
+      "tags": [
+        "git",
+        "repositories",
+        "developer tools",
+        "rest"
+      ],
+      "baseUrl": "https://api.github.com",
+      "documentationUrl": "https://docs.github.com/en/rest",
+      "officialWebsiteUrl": "https://github.com",
+      "authentication": {
+        "required": false,
+        "type": "bearer",
+        "location": "header",
+        "parameterName": "Authorization"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": true,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": "Unauthenticated: 60 requests/hour per IP. Authenticated users: 5,000 requests/hour (primary rate limits).",
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+        "lastVerified": "2026-10-12",
+        "verificationStatus": "verified",
+        "verificationNotes": "Rate-limit docs checked 2026-10-12: primary limits of 60/hour (unauthenticated) and 5,000/hour (authenticated) confirmed. Secondary limits and enterprise limits were not checked.",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/repos/octocat/Hello-World",
+        "query": {},
+        "headers": {
+          "Accept": "application/vnd.github+json"
+        },
+        "body": null
+      },
+      "limitations": [
+        "A token is optional for public data but raises limits; secondary rate limits also exist.",
+        "Never commit a personal access token; use YOUR_TOKEN placeholders."
+      ],
+      "statusPageUrl": "https://www.githubstatus.com",
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "restcountries",
+      "name": "REST Countries",
+      "description": "Country data: names, capitals, currencies, languages, regions and flags.",
+      "category": "Public Datasets",
+      "tags": [
+        "countries",
+        "geography",
+        "reference data"
+      ],
+      "baseUrl": "https://restcountries.com/v3.1",
+      "documentationUrl": "https://restcountries.com",
+      "officialWebsiteUrl": "https://restcountries.com",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/name/germany",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "jsonplaceholder",
+      "name": "JSONPlaceholder",
+      "description": "Free fake REST API for testing and prototyping with placeholder posts, users and comments.",
+      "category": "Developer Utilities",
+      "tags": [
+        "testing",
+        "mock",
+        "prototyping",
+        "rest"
+      ],
+      "baseUrl": "https://jsonplaceholder.typicode.com",
+      "documentationUrl": "https://jsonplaceholder.typicode.com/guide/",
+      "officialWebsiteUrl": "https://jsonplaceholder.typicode.com",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/posts/1",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Returns fake placeholder data, not real data.",
+        "Write requests are not persisted."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "frankfurter",
+      "name": "Frankfurter",
+      "description": "Open-source currency exchange rates API with latest and historical rates.",
+      "category": "Finance & Economics",
+      "tags": [
+        "currency",
+        "exchange rates",
+        "finance"
+      ],
+      "baseUrl": "https://api.frankfurter.app",
+      "documentationUrl": "https://frankfurter.dev",
+      "officialWebsiteUrl": "https://frankfurter.dev",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome. The base URL may have changed; check the docs.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/latest",
+        "query": {
+          "from": "EUR",
+          "to": "USD"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "coingecko",
+      "name": "CoinGecko API",
+      "description": "Cryptocurrency prices, market data, exchanges and on-chain metadata.",
+      "category": "Finance & Economics",
+      "tags": [
+        "crypto",
+        "prices",
+        "market data",
+        "finance"
+      ],
+      "baseUrl": "https://api.coingecko.com/api/v3",
+      "documentationUrl": "https://docs.coingecko.com",
+      "officialWebsiteUrl": "https://www.coingecko.com",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "header",
+        "parameterName": "x-cg-demo-api-key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": true,
+          "quota": 10000,
+          "unit": "calls",
+          "period": "month"
+        },
+        "trial": null,
+        "plans": [
+          {
+            "name": "Demo",
+            "monthlyBase": 0,
+            "billing": {
+              "kind": "requests",
+              "includedRequests": 10000,
+              "pricePerRequest": null,
+              "billedInBlocksOf": null
+            },
+            "notes": "Free plan; 100 calls/minute."
+          },
+          {
+            "name": "Basic",
+            "monthlyBase": 35,
+            "billing": {
+              "kind": "requests",
+              "includedRequests": 100000,
+              "pricePerRequest": null,
+              "billedInBlocksOf": null
+            },
+            "notes": "$35/month billed monthly; $29/month when billed yearly; 300 calls/minute."
+          }
+        ],
+        "rateLimits": "Demo: 100 calls/minute. Basic: 300 calls/minute.",
+        "overagePolicy": null,
+        "currency": "USD",
+        "pricingUrl": "https://www.coingecko.com/en/api/pricing",
+        "termsUrl": null,
+        "lastVerified": "2026-10-12",
+        "verificationStatus": "verified",
+        "verificationNotes": "Pricing page checked 2026-10-12 (first 100,000 characters): Demo $0 with 10k monthly call credits; Basic $35/month with 100k credits. Overage pricing and the exact auth header name were not verified. Credits are treated as 1 per call for comparison only if the provider documents it.",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/simple/price",
+        "query": {
+          "ids": "bitcoin",
+          "vs_currencies": "usd"
+        },
+        "headers": {
+          "x-cg-demo-api-key": "YOUR_API_KEY"
+        },
+        "body": null
+      },
+      "limitations": [
+        "Overage pricing is unknown, so costs above the included calls cannot be estimated.",
+        "Higher tiers exist that were not recorded."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "alpha-vantage",
+      "name": "Alpha Vantage",
+      "description": "Stock, forex and crypto time series plus technical indicators.",
+      "category": "Finance & Economics",
+      "tags": [
+        "stocks",
+        "forex",
+        "time series",
+        "finance"
+      ],
+      "baseUrl": "https://www.alphavantage.co",
+      "documentationUrl": "https://www.alphavantage.co/documentation/",
+      "officialWebsiteUrl": "https://www.alphavantage.co",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "apikey"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://www.alphavantage.co/premium/",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/query",
+        "query": {
+          "function": "TIME_SERIES_DAILY",
+          "symbol": "IBM",
+          "apikey": "YOUR_API_KEY"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Free-tier quotas and premium prices have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "openweathermap",
+      "name": "OpenWeatherMap",
+      "description": "Current weather, forecasts and geocoding for locations worldwide.",
+      "category": "Weather",
+      "tags": [
+        "weather",
+        "forecast",
+        "geocoding"
+      ],
+      "baseUrl": "https://api.openweathermap.org/data/2.5",
+      "documentationUrl": "https://openweathermap.org/api",
+      "officialWebsiteUrl": "https://openweathermap.org",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "appid"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://openweathermap.org/price",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/weather",
+        "query": {
+          "q": "London",
+          "appid": "YOUR_API_KEY"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Free-tier call limits and paid prices have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "openai-api",
+      "name": "OpenAI API",
+      "description": "Hosted large language, embedding, image and speech models with usage-based pricing.",
+      "category": "AI & Machine Learning",
+      "tags": [
+        "llm",
+        "ai",
+        "embeddings",
+        "tokens"
+      ],
+      "baseUrl": "https://api.openai.com/v1",
+      "documentationUrl": "https://platform.openai.com/docs/api-reference",
+      "officialWebsiteUrl": "https://openai.com",
+      "authentication": {
+        "required": true,
+        "type": "bearer",
+        "location": "header",
+        "parameterName": "Authorization"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "paid",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://openai.com/api/pricing/",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "POST",
+        "path": "/chat/completions",
+        "query": {},
+        "headers": {
+          "Authorization": "Bearer YOUR_API_KEY",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "model": "MODEL_ID",
+          "messages": [
+            {
+              "role": "user",
+              "content": "Hello"
+            }
+          ]
+        }
+      },
+      "limitations": [
+        "Token-based billing varies by model; per-model prices are not recorded here, so costs cannot be estimated.",
+        "Requires a secret key that must never be exposed in browser code."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "anthropic-api",
+      "name": "Claude API (Anthropic)",
+      "description": "Hosted Claude models for text generation, analysis and tool use with token-based pricing.",
+      "category": "AI & Machine Learning",
+      "tags": [
+        "llm",
+        "ai",
+        "tokens",
+        "assistant"
+      ],
+      "baseUrl": "https://api.anthropic.com",
+      "documentationUrl": "https://docs.claude.com",
+      "officialWebsiteUrl": "https://www.anthropic.com",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "header",
+        "parameterName": "x-api-key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "paid",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://docs.claude.com/en/docs/about-claude/pricing",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "POST",
+        "path": "/v1/messages",
+        "query": {},
+        "headers": {
+          "x-api-key": "YOUR_API_KEY",
+          "anthropic-version": "2023-06-01",
+          "content-type": "application/json"
+        },
+        "body": {
+          "model": "MODEL_ID",
+          "max_tokens": 1024,
+          "messages": [
+            {
+              "role": "user",
+              "content": "Hello"
+            }
+          ]
+        }
+      },
+      "limitations": [
+        "Token-based billing varies by model; per-model prices are not recorded here, so costs cannot be estimated.",
+        "Requires a secret key that must never be exposed in browser code."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "gemini-api",
+      "name": "Gemini API (Google AI)",
+      "description": "Google's hosted Gemini models for text, multimodal and embedding tasks.",
+      "category": "AI & Machine Learning",
+      "tags": [
+        "llm",
+        "ai",
+        "multimodal",
+        "tokens"
+      ],
+      "baseUrl": "https://generativelanguage.googleapis.com",
+      "documentationUrl": "https://ai.google.dev/gemini-api/docs",
+      "officialWebsiteUrl": "https://ai.google.dev",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "header",
+        "parameterName": "x-goog-api-key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://ai.google.dev/gemini-api/docs/pricing",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "POST",
+        "path": "/v1beta/models/MODEL_ID:generateContent",
+        "query": {},
+        "headers": {
+          "x-goog-api-key": "YOUR_API_KEY",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "Hello"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "limitations": [
+        "Free-tier limits and per-model prices change often and have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "ollama",
+      "name": "Ollama",
+      "description": "Open-source runtime that serves local large language models over a simple HTTP API.",
+      "category": "AI & Machine Learning",
+      "tags": [
+        "llm",
+        "self-hosted",
+        "open source",
+        "local"
+      ],
+      "baseUrl": "http://localhost:11434",
+      "documentationUrl": "https://github.com/ollama/ollama/blob/main/docs/api.md",
+      "officialWebsiteUrl": "https://ollama.com",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": false,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "self-hosted",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Self-hosted software: no provider fee is documented here, but you pay for your own hardware, power and maintenance.",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "POST",
+        "path": "/api/generate",
+        "query": {},
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "model": "MODEL_NAME",
+          "prompt": "Hello",
+          "stream": false
+        }
+      },
+      "limitations": [
+        "Runs on your own machine; compute, storage and maintenance costs are yours.",
+        "The default address is local-only, which the APIverse playground blocks by design.",
+        "You must download a model before calling it."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "google-books",
+      "name": "Google Books API",
+      "description": "Search and retrieve Google Books volume information.",
+      "category": "Books & Education",
+      "tags": [
+        "books",
+        "search",
+        "isbn"
+      ],
+      "baseUrl": "https://www.googleapis.com/books/v1",
+      "documentationUrl": "https://developers.google.com/books/docs/v1/using",
+      "officialWebsiteUrl": "https://developers.google.com/books",
+      "authentication": {
+        "required": false,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/volumes",
+        "query": {
+          "q": "flowers inauthor:keyes"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "An API key is optional for public volume searches; see the documentation for quota details."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "wikipedia-api",
+      "name": "Wikipedia (MediaWiki Action API)",
+      "description": "Search and read Wikipedia content, page summaries and metadata.",
+      "category": "Books & Education",
+      "tags": [
+        "encyclopedia",
+        "search",
+        "knowledge",
+        "education"
+      ],
+      "baseUrl": "https://en.wikipedia.org",
+      "documentationUrl": "https://www.mediawiki.org/wiki/API:Main_page",
+      "officialWebsiteUrl": "https://www.wikipedia.org",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/w/api.php",
+        "query": {
+          "action": "query",
+          "list": "search",
+          "srsearch": "Earth",
+          "format": "json",
+          "origin": "*"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Wikimedia asks automated clients to identify themselves with a descriptive User-Agent."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "nominatim",
+      "name": "Nominatim (OpenStreetMap)",
+      "description": "Geocoding and reverse geocoding from OpenStreetMap data; self-hostable.",
+      "category": "Maps & Geolocation",
+      "tags": [
+        "geocoding",
+        "maps",
+        "openstreetmap",
+        "self-hostable"
+      ],
+      "baseUrl": "https://nominatim.openstreetmap.org",
+      "documentationUrl": "https://nominatim.org/release-docs/latest/api/Overview/",
+      "officialWebsiteUrl": "https://nominatim.org",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": "Public service: maximum 1 request per second per application.",
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": "https://operations.osmfoundation.org/policies/nominatim/",
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Usage policy checked 2026-10-12: 1 request/second limit, identifying User-Agent or Referer, attribution (ODbL), caching, bulk geocoding discouraged. The policy page does not state a price, so the pricing record stays \"needs review\".",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/search",
+        "query": {
+          "q": "Berlin",
+          "format": "jsonv2"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Servers are donated with limited capacity; access can be withdrawn and the policy may change without notice.",
+        "Heavy or commercial use should use a third-party provider or a self-hosted instance.",
+        "Attribution required; data is under the ODbL (share-alike)."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "mapbox",
+      "name": "Mapbox APIs",
+      "description": "Geocoding, directions, static maps and map tiles.",
+      "category": "Maps & Geolocation",
+      "tags": [
+        "maps",
+        "geocoding",
+        "directions"
+      ],
+      "baseUrl": "https://api.mapbox.com",
+      "documentationUrl": "https://docs.mapbox.com/api/overview/",
+      "officialWebsiteUrl": "https://www.mapbox.com",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "access_token"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://www.mapbox.com/pricing",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/search/geocode/v6/forward",
+        "query": {
+          "q": "Berlin",
+          "access_token": "YOUR_ACCESS_TOKEN"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Free usage allowances and per-request prices have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "ip-api",
+      "name": "ip-api",
+      "description": "IP address geolocation lookups returning country, region, city and ISP.",
+      "category": "Maps & Geolocation",
+      "tags": [
+        "ip",
+        "geolocation",
+        "lookup"
+      ],
+      "baseUrl": "http://ip-api.com",
+      "documentationUrl": "https://ip-api.com/docs",
+      "officialWebsiteUrl": "https://ip-api.com",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": false,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/json/24.48.0.3",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "The documented free endpoint uses plain HTTP, so browsers block it as mixed content on HTTPS pages.",
+        "Check the provider terms before commercial use."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "world-bank",
+      "name": "World Bank Indicators API",
+      "description": "Economic and development indicators for countries worldwide.",
+      "category": "Finance & Economics",
+      "tags": [
+        "economics",
+        "indicators",
+        "open data",
+        "countries"
+      ],
+      "baseUrl": "https://api.worldbank.org/v2",
+      "documentationUrl": "https://datahelpdesk.worldbank.org/knowledgebase/topics/125589-developer-information",
+      "officialWebsiteUrl": "https://www.worldbank.org",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/country/br/indicator/SP.POP.TOTL",
+        "query": {
+          "format": "json"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "hacker-news",
+      "name": "Hacker News API",
+      "description": "Official Hacker News data API via Firebase: stories, comments, users and live updates.",
+      "category": "News",
+      "tags": [
+        "news",
+        "tech",
+        "firebase",
+        "no-auth"
+      ],
+      "baseUrl": "https://hacker-news.firebaseio.com/v0",
+      "documentationUrl": "https://github.com/HackerNews/API",
+      "officialWebsiteUrl": "https://news.ycombinator.com",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/topstories.json",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "newsapi",
+      "name": "NewsAPI",
+      "description": "Search news articles and headlines from many publishers.",
+      "category": "News",
+      "tags": [
+        "news",
+        "headlines",
+        "search"
+      ],
+      "baseUrl": "https://newsapi.org/v2",
+      "documentationUrl": "https://newsapi.org/docs",
+      "officialWebsiteUrl": "https://newsapi.org",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "header",
+        "parameterName": "X-Api-Key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://newsapi.org/pricing",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/top-headlines",
+        "query": {
+          "country": "us"
+        },
+        "headers": {
+          "X-Api-Key": "YOUR_API_KEY"
+        },
+        "body": null
+      },
+      "limitations": [
+        "Free-plan terms (including any restriction to development use) have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "guardian-open-platform",
+      "name": "The Guardian Open Platform",
+      "description": "Search and read content published by The Guardian.",
+      "category": "News",
+      "tags": [
+        "news",
+        "articles",
+        "search"
+      ],
+      "baseUrl": "https://content.guardianapis.com",
+      "documentationUrl": "https://open-platform.theguardian.com/documentation/",
+      "officialWebsiteUrl": "https://open-platform.theguardian.com",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "api-key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/search",
+        "query": {
+          "q": "debate",
+          "api-key": "YOUR_API_KEY"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Key tiers and commercial terms have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "openfda",
+      "name": "openFDA",
+      "description": "U.S. FDA public datasets on drug adverse events, labeling, recalls and devices.",
+      "category": "Health",
+      "tags": [
+        "health",
+        "drugs",
+        "fda",
+        "open data"
+      ],
+      "baseUrl": "https://api.fda.gov",
+      "documentationUrl": "https://open.fda.gov/apis/",
+      "officialWebsiteUrl": "https://open.fda.gov",
+      "authentication": {
+        "required": false,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "api_key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": true,
+          "quota": 120000,
+          "unit": "requests",
+          "period": "day"
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": "Without a key: 240 requests/minute and 1,000/day per IP. With a free key: 240 requests/minute and 120,000/day per key.",
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": "2026-10-12",
+        "verificationStatus": "verified",
+        "verificationNotes": "Authentication page checked 2026-10-12: limits confirmed and the key is described as free. The page also says a key is \"required\" while documenting keyless limits, so authentication is recorded as optional pending clarification. The query parameter name \"api_key\" was not seen on the page.",
+        "history": []
+      },
+      "featured": true,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/drug/event.json",
+        "query": {
+          "limit": "1"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "The provider page both lists keyless limits and calls a key \"required\"; confirm current behaviour.",
+        "Public health data; not medical advice."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "rawg",
+      "name": "RAWG Video Games Database",
+      "description": "Video game database with titles, platforms, genres and ratings.",
+      "category": "Gaming & Entertainment",
+      "tags": [
+        "games",
+        "database",
+        "platforms"
+      ],
+      "baseUrl": "https://api.rawg.io/api",
+      "documentationUrl": "https://api.rawg.io/docs/",
+      "officialWebsiteUrl": "https://rawg.io",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "query",
+        "parameterName": "key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "freemium",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": "https://rawg.io/apidocs",
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/games",
+        "query": {
+          "key": "YOUR_API_KEY"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Free-plan terms, such as attribution requirements, have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "free-dictionary-api",
+      "name": "Free Dictionary API",
+      "description": "English word definitions, phonetics and usage examples.",
+      "category": "Books & Education",
+      "tags": [
+        "dictionary",
+        "words",
+        "language",
+        "education"
+      ],
+      "baseUrl": "https://api.dictionaryapi.dev/api/v2",
+      "documentationUrl": "https://dictionaryapi.dev/",
+      "officialWebsiteUrl": "https://dictionaryapi.dev/",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/entries/en/hello",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "google-calendar",
+      "name": "Google Calendar API",
+      "description": "Read and manage Google Calendar events and calendars with OAuth 2.0.",
+      "category": "Productivity",
+      "tags": [
+        "calendar",
+        "events",
+        "oauth",
+        "google"
+      ],
+      "baseUrl": "https://www.googleapis.com/calendar/v3",
+      "documentationUrl": "https://developers.google.com/calendar/api",
+      "officialWebsiteUrl": "https://developers.google.com/calendar",
+      "authentication": {
+        "required": true,
+        "type": "oauth2",
+        "location": "header",
+        "parameterName": "Authorization"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/users/me/calendarList",
+        "query": {},
+        "headers": {
+          "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+        },
+        "body": null
+      },
+      "limitations": [
+        "Requires an OAuth 2.0 flow and a Google Cloud project; quotas have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "notion-api",
+      "name": "Notion API",
+      "description": "Read and write Notion pages, databases and users through integrations.",
+      "category": "Productivity",
+      "tags": [
+        "notes",
+        "databases",
+        "workspace"
+      ],
+      "baseUrl": "https://api.notion.com/v1",
+      "documentationUrl": "https://developers.notion.com",
+      "officialWebsiteUrl": "https://www.notion.com",
+      "authentication": {
+        "required": true,
+        "type": "bearer",
+        "location": "header",
+        "parameterName": "Authorization"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome. Plan-level limits were not checked.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/users/me",
+        "query": {},
+        "headers": {
+          "Authorization": "Bearer YOUR_INTEGRATION_TOKEN",
+          "Notion-Version": "2022-06-28"
+        },
+        "body": null
+      },
+      "limitations": [
+        "Requires a workspace and an integration token; plan limits have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "httpbin",
+      "name": "httpbin",
+      "description": "HTTP request and response service for testing clients; echoes what you send.",
+      "category": "Developer Utilities",
+      "tags": [
+        "testing",
+        "http",
+        "debugging"
+      ],
+      "baseUrl": "https://httpbin.org",
+      "documentationUrl": "https://httpbin.org",
+      "officialWebsiteUrl": "https://httpbin.org",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/get",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "A testing utility, not a data API.",
+        "Public instance availability is not guaranteed; it can be self-hosted."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "sunrise-sunset",
+      "name": "Sunrise-Sunset API",
+      "description": "Sunrise, sunset and twilight times for a latitude and longitude.",
+      "category": "Science",
+      "tags": [
+        "astronomy",
+        "time",
+        "geolocation"
+      ],
+      "baseUrl": "https://api.sunrise-sunset.org",
+      "documentationUrl": "https://sunrise-sunset.org/api",
+      "officialWebsiteUrl": "https://sunrise-sunset.org",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/json",
+        "query": {
+          "lat": "36.72016",
+          "lng": "-4.42034",
+          "date": "today"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "open-trivia-db",
+      "name": "Open Trivia DB",
+      "description": "Free trivia questions by category and difficulty.",
+      "category": "Gaming & Entertainment",
+      "tags": [
+        "trivia",
+        "quiz",
+        "games"
+      ],
+      "baseUrl": "https://opentdb.com",
+      "documentationUrl": "https://opentdb.com/api_config.php",
+      "officialWebsiteUrl": "https://opentdb.com",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/api.php",
+        "query": {
+          "amount": "1"
+        },
+        "headers": {},
+        "body": null
+      },
+      "limitations": [],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "openaq",
+      "name": "OpenAQ",
+      "description": "Open air quality measurements from monitoring stations around the world.",
+      "category": "Science",
+      "tags": [
+        "air quality",
+        "environment",
+        "open data"
+      ],
+      "baseUrl": "https://api.openaq.org/v3",
+      "documentationUrl": "https://docs.openaq.org",
+      "officialWebsiteUrl": "https://openaq.org",
+      "authentication": {
+        "required": true,
+        "type": "apiKey",
+        "location": "header",
+        "parameterName": "X-API-Key"
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/locations",
+        "query": {
+          "limit": "1"
+        },
+        "headers": {
+          "X-API-Key": "YOUR_API_KEY"
+        },
+        "body": null
+      },
+      "limitations": [
+        "Requires a free API key; rate limits have not been verified in APIverse."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    },
+    {
+      "id": "carbon-intensity-uk",
+      "name": "Carbon Intensity API (GB)",
+      "description": "Carbon intensity of electricity generation in Great Britain, current and forecast.",
+      "category": "Science",
+      "tags": [
+        "energy",
+        "environment",
+        "carbon",
+        "open data"
+      ],
+      "baseUrl": "https://api.carbonintensity.org.uk",
+      "documentationUrl": "https://carbon-intensity.github.io/api-definitions/",
+      "officialWebsiteUrl": "https://carbonintensity.org.uk",
+      "authentication": {
+        "required": false,
+        "type": "none",
+        "location": null,
+        "parameterName": null
+      },
+      "https": true,
+      "corsStatus": "unknown",
+      "pricing": {
+        "model": "free",
+        "freeTier": {
+          "available": null,
+          "quota": null,
+          "unit": null,
+          "period": null
+        },
+        "trial": null,
+        "plans": [],
+        "rateLimits": null,
+        "overagePolicy": null,
+        "currency": null,
+        "pricingUrl": null,
+        "termsUrl": null,
+        "lastVerified": null,
+        "verificationStatus": "needs-review",
+        "verificationNotes": "Entry added from public knowledge of the provider's documentation; pricing and limits have not been checked against official pages yet. Contributions welcome.",
+        "history": []
+      },
+      "featured": false,
+      "sampleRequest": {
+        "method": "GET",
+        "path": "/intensity",
+        "query": {},
+        "headers": {},
+        "body": null
+      },
+      "limitations": [
+        "Covers Great Britain only."
+      ],
+      "statusPageUrl": null,
+      "addedOn": "2026-10-12"
+    }
+  ]
+}

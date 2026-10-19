@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "recipes": [
+    { "id": "weather-dashboard", "name": "Weather dashboard", "summary": "Look up a place by name, then show its forecast.", "apis": [
+      { "id": "nominatim", "role": "Turn a place name into coordinates (geocoding)" },
+      { "id": "open-meteo", "role": "Forecast for those coordinates" } ],
+      "notes": "Nominatim's public instance has a strict usage policy (no heavy use, identify your app). Check both providers' terms before shipping commercially." },
+    { "id": "book-explorer", "name": "Book discovery page", "summary": "Search books and show background from Wikipedia.", "apis": [
+      { "id": "open-library", "role": "Search books and authors" },
+      { "id": "wikipedia-api", "role": "Author or topic summaries" } ],
+      "notes": "Keep attribution requirements in mind for both data sources." },
+    { "id": "crypto-tracker", "name": "Crypto and currency tracker", "summary": "Crypto prices alongside fiat exchange rates.", "apis": [
+      { "id": "coingecko", "role": "Crypto prices" },
+      { "id": "frankfurter", "role": "Fiat exchange rates" } ],
+      "notes": "CoinGecko requires a key on its current plans; check the provider's docs for how to send it." },
+    { "id": "dev-pulse", "name": "Developer news pulse", "summary": "Trending discussion plus repository activity.", "apis": [
+      { "id": "hacker-news", "role": "Top stories" },
+      { "id": "github-rest", "role": "Repository details and activity" } ],
+      "notes": "GitHub's unauthenticated rate limit is low; plan to add a token server-side for anything beyond a demo." },
+    { "id": "environment-monitor", "name": "Air quality and grid carbon", "summary": "Combine local air quality with UK grid carbon intensity.", "apis": [
+      { "id": "openaq", "role": "Air quality measurements" },
+      { "id": "carbon-intensity-uk", "role": "UK electricity carbon intensity" } ],
+      "notes": "Carbon intensity data covers Great Britain only." },
+    { "id": "no-key-quiz", "name": "No-key quiz game (hackathon)", "summary": "A quiz game that needs no sign-ups or keys.", "apis": [
+      { "id": "open-trivia-db", "role": "Questions" },
+      { "id": "restcountries", "role": "Country facts for geography rounds" },
+      { "id": "pokeapi", "role": "Pokémon facts for a themed round" } ],
+      "notes": "Fast to prototype. Verify terms before anything commercial." }
+  ]
+}

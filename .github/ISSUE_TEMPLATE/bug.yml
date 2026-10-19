@@ -1,0 +1,22 @@
+name: Bug report
+description: Something in APIverse is not working
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the page URL, what you expected and what you saw.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+  - type: input
+    id: env
+    attributes:
+      label: Browser and OS
+  - type: markdown
+    attributes:
+      value: Do not paste API keys. For security issues, see SECURITY.md instead of opening a public issue.

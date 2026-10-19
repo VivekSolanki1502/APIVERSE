@@ -1,0 +1,28 @@
+name: Data correction
+description: Report outdated or incorrect API information
+labels: [data-correction, pricing verification]
+body:
+  - type: input
+    id: api
+    attributes:
+      label: API id or name
+      placeholder: open-meteo
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is outdated or wrong?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL showing the correct information
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date you checked the source
+      placeholder: YYYY-MM-DD

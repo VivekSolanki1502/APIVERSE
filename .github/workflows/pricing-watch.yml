@@ -1,0 +1,34 @@
+name: Pricing watch
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - run: npm ci
+      - name: Check pricing pages (report only)
+        run: npm run pricing:watch
+      - name: Open a review issue if page text changed
+        if: hashFiles('pricing-watch-report.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create "pricing verification" --color FBCA04 2>/dev/null || true
+          gh issue create \
+            --title "Pricing pages changed: review needed ($(date -u +%F))" \
+            --label "pricing verification" \
+            --body-file pricing-watch-report.md
